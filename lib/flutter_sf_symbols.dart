@@ -10,8 +10,8 @@
 library;
 
 import 'package:flutter/widgets.dart';
-import 'package:flutter_symbols/src/icon_data.dart';
-export 'package:flutter_symbols/src/icon_data.dart';
+import 'package:flutter_sf_symbols/src/icon_data.dart';
+export 'package:flutter_sf_symbols/src/icon_data.dart';
 
 /// Apple SF Symbols 6 as Flutter [IconData].
 ///

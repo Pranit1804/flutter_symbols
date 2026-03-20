@@ -70,7 +70,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.0.0"
-  flutter_symbols:
+  flutter_sf_symbols:
     dependency: "direct main"
     description:
       path: ".."

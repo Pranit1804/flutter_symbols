@@ -30,7 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_symbols:
+  flutter_sf_symbols:
     path: ../
   cupertino_icons: ^1.0.8
 

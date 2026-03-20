@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_symbols/flutter_symbols.dart';
+import 'package:flutter_sf_symbols/flutter_sf_symbols.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -11,8 +11,8 @@ void main() {
     });
 
     test('icons have correct font package', () {
-      expect(SFSymbols.zero_circle.fontPackage, 'flutter_symbols');
-      expect(SFSymbols.zero_circle_fill.fontPackage, 'flutter_symbols');
+      expect(SFSymbols.zero_circle.fontPackage, 'flutter_sf_symbols');
+      expect(SFSymbols.zero_circle_fill.fontPackage, 'flutter_sf_symbols');
     });
 
     test('icons have non-zero codepoints', () {
@@ -51,7 +51,7 @@ void main() {
       const icon = IconDataSFSymbol(0xE001);
       expect(icon.codePoint, 0xE001);
       expect(icon.fontFamily, 'SFSymbols');
-      expect(icon.fontPackage, 'flutter_symbols');
+      expect(icon.fontPackage, 'flutter_sf_symbols');
     });
   });
 }
