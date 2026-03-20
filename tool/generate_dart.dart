@@ -1,13 +1,13 @@
 // ignore_for_file: avoid_print
 
-// Dart code generator for flutter_sf_symbols.
+// Dart code generator for flutter_cupertino_symbols.
 //
 // Reads:
 //   - lib/fonts/SFSymbols.json  (fantasticon codepoint map)
 //   - tool/symbol_manifest.json (original_name → safe_filename mapping)
 //
 // Writes:
-//   - lib/flutter_sf_symbols.dart  (the SFSymbols class with ~8,000 IconData constants)
+//   - lib/flutter_cupertino_symbols.dart  (the SFSymbols class with ~8,000 IconData constants)
 
 import 'dart:convert';
 import 'dart:io';
@@ -60,7 +60,7 @@ void main() {
 
   final codepointFile = File('${repoRoot.path}/lib/fonts/SFSymbols.json');
   final manifestFile  = File('${scriptDir.path}/symbol_manifest.json');
-  final outputFile    = File('${repoRoot.path}/lib/flutter_sf_symbols.dart');
+  final outputFile    = File('${repoRoot.path}/lib/flutter_cupertino_symbols.dart');
 
   if (!codepointFile.existsSync()) {
     stderr.writeln('Error: ${codepointFile.path} not found.');
@@ -130,8 +130,8 @@ void main() {
   buf.writeln('library;');
   buf.writeln();
   buf.writeln("import 'package:flutter/widgets.dart';");
-  buf.writeln("import 'package:flutter_sf_symbols/src/icon_data.dart';");
-  buf.writeln("export 'package:flutter_sf_symbols/src/icon_data.dart';");
+  buf.writeln("import 'package:flutter_cupertino_symbols/src/icon_data.dart';");
+  buf.writeln("export 'package:flutter_cupertino_symbols/src/icon_data.dart';");
   buf.writeln();
   buf.writeln('/// Apple SF Symbols 6 as Flutter [IconData].');
   buf.writeln('///');

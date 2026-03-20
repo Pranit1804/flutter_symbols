@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sf_symbols/flutter_sf_symbols.dart';
+import 'package:flutter_cupertino_symbols/flutter_cupertino_symbols.dart';
 
 void main() {
   runApp(const MyApp());

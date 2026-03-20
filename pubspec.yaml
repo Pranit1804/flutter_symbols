@@ -1,7 +1,7 @@
-name: flutter_sf_symbols
+name: flutter_cupertino_symbols
 description: "Apple SF Symbols 6 as Flutter IconData. 6000+ iOS & macOS icons for Apple platforms."
 version: 1.0.0
-homepage: https://github.com/fitpage-tech/flutter_sf_symbols
+homepage: https://github.com/fitpage-tech/flutter_cupertino_symbols
 
 environment:
   sdk: ^3.9.2

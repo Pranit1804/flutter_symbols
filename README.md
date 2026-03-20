@@ -1,16 +1,16 @@
-# flutter_sf_symbols
+# flutter_cupertino_symbols
 
 **Apple SF Symbols for Flutter** — 6000+ iOS & macOS icons as native `IconData` constants. Drop SF Symbols directly into any Flutter `Icon` widget with zero custom widgets and zero runtime overhead.
 
-[![pub version](https://img.shields.io/pub/v/flutter_sf_symbols.svg)](https://pub.dev/packages/flutter_sf_symbols)
-[![pub points](https://img.shields.io/pub/points/flutter_sf_symbols)](https://pub.dev/packages/flutter_sf_symbols/score)
+[![pub version](https://img.shields.io/pub/v/flutter_cupertino_symbols.svg)](https://pub.dev/packages/flutter_cupertino_symbols)
+[![pub points](https://img.shields.io/pub/points/flutter_cupertino_symbols)](https://pub.dev/packages/flutter_cupertino_symbols/score)
 [![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 > **Platform notice**: SF Symbols are licensed by Apple for use **on Apple platforms only** (iOS, macOS, watchOS, tvOS, visionOS). Do not distribute apps using these icons on Android, Web, Linux, or Windows.
 
 ---
 
-## Why flutter_sf_symbols?
+## Why flutter_cupertino_symbols?
 
 Building a Flutter app for iOS or macOS? SF Symbols are the **native icon system used across all Apple platforms** — the same icons found in Settings, Safari, Maps, and every first-party Apple app. Using them makes your Flutter app feel truly native on iOS and macOS.
 
@@ -28,7 +28,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_sf_symbols: ^1.0.0
+  flutter_cupertino_symbols: ^1.0.0
 ```
 
 Then run:
@@ -42,7 +42,7 @@ flutter pub get
 ## Usage
 
 ```dart
-import 'package:flutter_sf_symbols/flutter_sf_symbols.dart';
+import 'package:flutter_cupertino_symbols/flutter_cupertino_symbols.dart';
 
 // Basic usage — identical to Flutter's built-in Icons
 Icon(SFSymbols.heart_fill)
@@ -161,7 +161,7 @@ Pipeline steps:
 1. **export** — Swift renders each symbol to a high-res PNG via the SF Symbols app
 2. **trace** — Python/vtracer converts PNGs to SVGs
 3. **font** — fantasticon packages SVGs into `SFSymbols.ttf`
-4. **dart** — Dart script generates `lib/flutter_sf_symbols.dart` with all constants
+4. **dart** — Dart script generates `lib/flutter_cupertino_symbols.dart` with all constants
 
 ---
 

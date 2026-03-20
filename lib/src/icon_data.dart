@@ -9,6 +9,6 @@ class IconDataSFSymbol extends IconData {
   const IconDataSFSymbol(super.codePoint)
       : super(
           fontFamily: 'SFSymbols',
-          fontPackage: 'flutter_sf_symbols',
+          fontPackage: 'flutter_cupertino_symbols',
         );
 }
