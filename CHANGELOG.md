@@ -1,3 +1,8 @@
+## 1.0.2
+
+* Fixed icon centering for all non-square symbols (6,318 landscape and 1,604 portrait glyphs).
+* Wide symbols like `minus`, `ellipsis`, `line3HorizontalDecrease` and tall symbols like `poweron`, `exclamationmark`, `chevronCompactLeft` were rendered off-center due to fantasticon normalising non-square SVGs to the font UPM height. Each SVG canvas is now squared with the artwork centred before font generation.
+
 ## 1.0.1
 
 * Renamed package to `flutter_cupertino_symbols`.
