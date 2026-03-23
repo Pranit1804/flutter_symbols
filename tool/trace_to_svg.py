@@ -7,7 +7,7 @@ Output: tool/svgs/        (SVG files ready for fantasticon)
 Install dependency: pip3 install vtracer
 """
 
-import os
+import re
 import sys
 import json
 import argparse
@@ -25,6 +25,51 @@ png_dir    = script_dir / "pngs"
 svg_dir    = script_dir / "svgs"
 manifest_path = script_dir / "symbol_manifest.json"
 
+def square_svg(svg_path: Path) -> None:
+    """
+    Rewrite the SVG so its canvas is square (max(width, height) × max(width, height))
+    with the artwork centred inside it.  This prevents non-square glyphs (e.g. wide
+    landscape symbols like line.3.horizontal.decrease) from appearing off-centre when
+    fantasticon normalises all icons to the same UPM height.
+    """
+    text = svg_path.read_text(encoding="utf-8")
+
+    # Extract width / height from the <svg …> opening tag
+    w_match = re.search(r'<svg[^>]+\bwidth="([0-9.]+)"', text)
+    h_match = re.search(r'<svg[^>]+\bheight="([0-9.]+)"', text)
+    if not w_match or not h_match:
+        return  # can't parse — leave as-is
+
+    w = float(w_match.group(1))
+    h = float(h_match.group(1))
+    if abs(w - h) < 1:
+        return  # already square — nothing to do
+
+    side = max(w, h)
+    dx   = (side - w) / 2
+    dy   = (side - h) / 2
+
+    # Replace width/height attributes with the square size
+    text = re.sub(r'(<svg[^>]+\bwidth=")[0-9.]+(")', rf'\g<1>{side}\2', text)
+    text = re.sub(r'(<svg[^>]+\bheight=")[0-9.]+(")', rf'\g<1>{side}\2', text)
+
+    # Wrap all existing content in a <g translate(dx, dy)> so it stays centred
+    text = text.replace(
+        "</svg>",
+        f'</g>\n</svg>',
+        1,
+    )
+    # Insert the opening <g> right after the <svg …> tag closes
+    text = re.sub(
+        r'(<svg[^>]*>)',
+        rf'\1\n<g transform="translate({dx:.3f},{dy:.3f})">',
+        text,
+        count=1,
+    )
+
+    svg_path.write_text(text, encoding="utf-8")
+
+
 def trace_png_to_svg(png_path: Path, svg_path: Path) -> bool:
     try:
         vtracer.convert_image_to_svg_py(
@@ -38,7 +83,10 @@ def trace_png_to_svg(png_path: Path, svg_path: Path) -> bool:
             splice_threshold=45,      # Path splice threshold
             path_precision=3,         # Decimal places (3 = good balance)
         )
-        return svg_path.exists() and svg_path.stat().st_size > 0
+        if not (svg_path.exists() and svg_path.stat().st_size > 0):
+            return False
+        square_svg(svg_path)
+        return True
     except Exception as e:
         print(f"  Error tracing {png_path.name}: {e}", file=sys.stderr)
         return False

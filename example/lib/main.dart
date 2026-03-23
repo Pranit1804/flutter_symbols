@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
 const List<(IconData, String)> _showcaseIcons = [
   (SFSymbols.zero_circle, '0.circle'),
 
-  (SFSymbols.chevron_right, '0.circle.fill'),
+  (SFSymbols.line_horizontal_3_decrease, 'line.3.horizontal.decrease'),
   (SFSymbols.zero_square, '0.square'),
   (SFSymbols.zero_square_fill, '0.square.fill'),
   (SFSymbols.zero_zero_circle, '00.circle'),
@@ -55,7 +55,7 @@ class _IconGalleryPageState extends State<IconGalleryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('SF Symbols'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
