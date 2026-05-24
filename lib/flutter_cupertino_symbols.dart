@@ -7,8 +7,6 @@
 // (iOS, macOS, watchOS, tvOS, visionOS) only. Do not use on Android,
 // Web, or other non-Apple platforms.
 
-library;
-
 import 'package:flutter/widgets.dart';
 
 /// Apple SF Symbols 6 as Flutter [IconData].

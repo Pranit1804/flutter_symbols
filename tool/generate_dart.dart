@@ -206,8 +206,6 @@ void main() {
   );
   buf.writeln('// Web, or other non-Apple platforms.');
   buf.writeln();
-  buf.writeln('library;');
-  buf.writeln();
   buf.writeln("import 'package:flutter/widgets.dart';");
   buf.writeln();
   buf.writeln('/// Apple SF Symbols 6 as Flutter [IconData].');
