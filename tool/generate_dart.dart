@@ -225,7 +225,7 @@ void main() {
   );
   buf.writeln('@staticIconProvider');
   buf.writeln('class SFSymbols {');
-  buf.writeln('  SFSymbols._();');
+  buf.writeln('  const SFSymbols._();');
   buf.writeln();
 
   for (final e in sortedEntries) {

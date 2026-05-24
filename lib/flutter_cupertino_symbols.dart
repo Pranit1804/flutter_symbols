@@ -22,7 +22,7 @@ import 'package:flutter/widgets.dart';
 /// Apple platforms (iOS, macOS, watchOS, tvOS, visionOS) only.
 @staticIconProvider
 class SFSymbols {
-  SFSymbols._();
+  const SFSymbols._();
 
   /// SF Symbol: `abs`
   // ignore: constant_identifier_names
