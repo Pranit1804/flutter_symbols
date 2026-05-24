@@ -235,7 +235,7 @@ void main() {
     buf.writeln('  /// SF Symbol: `$sfName`');
     buf.writeln('  // ignore: constant_identifier_names');
     buf.writeln(
-      "  static const IconData $dartId = IconData($codepoint, fontFamily: 'SFSymbols', fontPackage: 'flutter_cupertino_symbols');",
+      "  static const $dartId = IconData($codepoint, fontFamily: 'SFSymbols', fontPackage: 'flutter_cupertino_symbols');",
     );
   }
 

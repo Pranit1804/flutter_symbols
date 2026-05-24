@@ -27,4 +27,4 @@ flutter:
   fonts:
     - family: SFSymbols
       fonts:
-        - asset: assets/fonts/SFSymbols.ttf
+        - asset: lib/fonts/SFSymbols.ttf
