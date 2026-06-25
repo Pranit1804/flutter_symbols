@@ -1,3 +1,9 @@
+## 1.0.3
+
+* Fixed a compile error on Flutter 3.22+ caused by `IconData` being marked as a `final` class.
+* Removed the custom `IconDataSFSymbol` subclass. All 6,843 SF Symbol constants now use the standard `IconData` constructor directly.
+* Updated code generator to prevent regression.
+
 ## 1.0.2
 
 * Fixed icon centering for all non-square symbols (6,318 landscape and 1,604 portrait glyphs).

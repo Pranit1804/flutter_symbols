@@ -48,7 +48,7 @@ void main() {
 
   group('IconDataSFSymbol', () {
     test('extends IconData correctly', () {
-      const icon = IconDataSFSymbol(0xE001);
+      const icon = IconData(0xE001);
       expect(icon.codePoint, 0xE001);
       expect(icon.fontFamily, 'SFSymbols');
       expect(icon.fontPackage, 'flutter_cupertino_symbols');
